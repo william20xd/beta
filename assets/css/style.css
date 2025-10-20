@@ -1,0 +1,241 @@
+/* =========================================================
+   🎨 VARIABLES DE COLOR Y FUENTES
+========================================================= */
+:root {
+    --rosa: #f8c4d0;
+    --rosa-oscuro: #e9a8b9;
+    --negro: #222;
+    --gris: #555;
+    --blanco: #fff;
+    --sombra: rgba(0, 0, 0, 0.1);
+}
+
+/* =========================================================
+   🌐 ESTILOS GENERALES
+========================================================= */
+html,
+body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    color: var(--negro);
+    background-color: var(--blanco);
+    scroll-behavior: smooth;
+}
+
+.text-pink {
+    color: var(--rosa) !important;
+}
+
+/* =========================================================
+   🧭 NAVBAR
+========================================================= */
+.navbar {
+    transition: all 0.3s ease;
+}
+
+.logo-text {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.8rem;
+    color: var(--rosa);
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link {
+    font-weight: 500;
+    color: var(--gris) !important;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--rosa) !important;
+}
+
+.navbar.scrolled {
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 10px var(--sombra);
+}
+
+/* =========================================================
+   🐶 HERO (SECCIÓN PRINCIPAL)
+========================================================= */
+.hero {
+    background: linear-gradient(135deg, var(--rosa) 40%, #fff 100%);
+    padding: 5rem 0;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero-img {
+    height: 300px;
+    object-fit: cover;
+}
+
+/* Carrusel */
+.carousel-inner {
+    border-radius: 1.5rem;
+    overflow: hidden;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    padding: 15px;
+}
+
+/* Versión móvil */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem 1rem;
+    }
+
+    .hero-img {
+        height: 250px;
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        padding: 10px;
+    }
+}
+
+/* =========================================================
+   🃏 TARJETAS (SERVICIOS Y EXPERIENCIA)
+========================================================= */
+.card-title {
+    font-weight: 700;
+    color: var(--negro);
+}
+
+.card-anim {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-anim:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 10px 25px var(--sombra);
+}
+
+/* =========================================================
+   📸 GALERÍA
+========================================================= */
+.gallery-img {
+    height: 250px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.gallery-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px var(--sombra);
+}
+
+/* Fondo del modal */
+.modal-backdrop.show {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* =========================================================
+   📱 RESPONSIVE (MÓVILES)
+========================================================= */
+@media (max-width: 768px) {
+
+    /* Navbar */
+    .navbar-brand img {
+        display: none;
+        /* Elimina logo en móviles si ocupa mucho espacio */
+    }
+
+    /* Hero */
+    .hero {
+        padding: 2rem 1rem;
+        min-height: 60vh;
+        align-items: flex-start;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero .col-lg-6 {
+        width: 100%;
+        margin-bottom: 1.5rem;
+    }
+
+    .animate__animated {
+        animation: none !important;
+    }
+
+    /* Galería */
+    .gallery-img {
+        height: 180px;
+    }
+}
+
+/* =========================================================
+   🦶 FOOTER
+========================================================= */
+footer {
+    background-color: var(--negro);
+    color: var(--blanco);
+    border-top: 3px solid var(--rosa);
+    text-align: center;
+    padding: 1.5rem 0;
+    font-size: 0.95rem;
+}
+
+/* =========================================================
+   ✨ EFECTOS ADICIONALES
+========================================================= */
+.card-anim:hover .card-title {
+    color: var(--rosa);
+    transition: color 0.3s ease;
+}
+
+.btn-dark {
+    background-color: var(--negro);
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-dark:hover {
+    background-color: var(--rosa-oscuro);
+    color: var(--blanco);
+}
+
+
+/* Reseñas */
+#reseñas {
+    background: linear-gradient(180deg, #fff 0%, #fef6f8 100%);
+}
+
+#reseñas .card {
+    border-radius: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#reseñas .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+#reseñas .card-text {
+    font-size: 0.95rem;
+    color: #444;
+}
+
+#reseñas .text-warning {
+    letter-spacing: 1px;
+}
+
+/* Corrige el salto al navegar con anclas */
+section[id] {
+    scroll-margin-top: 50px;
+    /* ajusta según la altura de tu navbar */
+}
